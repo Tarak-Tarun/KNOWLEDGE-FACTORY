@@ -8,4 +8,4 @@ def fizzbuzz(number):
             print(f"{i}: Buzz")
         else:
             print(i)
-fizzbuzz(100)
+fizzbuzz(int(input("Enter a Numnber: ")))
