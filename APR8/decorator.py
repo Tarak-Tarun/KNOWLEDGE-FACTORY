@@ -1,12 +1,11 @@
 def my_decorator(func):
     def wrapper():
-        print("Before function")
+        print("Something is happening before the function is called.")
         func()
-        print("After function")
+        print("Something is happening after the function is called.")
     return wrapper
-
 @my_decorator
-def greet():
-    print("Hi!")
-
-greet()
+def say_hello():
+    print("Hello!")
+if __name__=="__main__":
+    say_hello()
