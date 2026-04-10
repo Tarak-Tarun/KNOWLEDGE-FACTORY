@@ -1,11 +1,19 @@
-def my_decorator(func):
-    def wrapper():
-        print("Something is happening before the function is called.")
+from functools import wraps
+def my(func):
+    @wraps(func)
+    def sample():
+        print("Starting Process.")
         func()
         print("Something is happening after the function is called.")
-    return wrapper
-@my_decorator
+
+    return sample
+
+
+@my
 def say_hello():
-    print("Hello!")
-if __name__=="__main__":
-    say_hello()
+    print("Logging in!")
+    print(say_hello.__name__)
+    print(say_hello.__doc__)
+
+
+say_hello()
